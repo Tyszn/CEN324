@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial and Average Calculation</title>
+</head>
+<body>
+    <h1>Factorial and Average Calculation</h1>
+
+    <h2>Factorial of 71</h2>
+    <p id="factorial-result"></p>
+
+    <h2>Average of A = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)</h2>
+    <p id="average-result"></p>
+
+    <script>
+        // Factorial calculation
+        function factorial(n) {
+            let result = BigInt(1); // Initialize result as BigInt 1
+            for (let i = BigInt(2); i <= n; i++) {
+                result *= i; // Multiply result by i at each step
+            }
+            return result;
+        }
+        document.getElementById("factorial-result").textContent = "Factorial of 71 is: " + factorial(BigInt(71)).toString();
+
+        // Average calculation
+        const A = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function average(arr) {
+            const sum = arr.reduce((acc, num) => acc + num, 0); // Sum of all elements in the array
+            return sum / arr.length; // Divide by the number of elements to get the average
+        }
+        document.getElementById("average-result").textContent = "Average of A is: " + average(A);
+    </script>
+</body>
+</html>
